@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "jsx": "react",
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "./dist",
+    "sourceMap": true,
     "allowJs": true,
-    "moduleResolution": "node"
-  }
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "include": ["src"]
 }

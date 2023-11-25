@@ -1,12 +1,17 @@
-import * as React from "react"; //TODOEgemen: delete it
+import { useEffect, useState } from "react";
 
-import { FC } from "react";
+export const App = () => {
+  const [count, setCount] = useState(0);
 
-export const App: FC<{ name: string }> = ({ name }) => {
+  useEffect(() => {
+    console.log(count);
+  }, []);
+
   return (
-    <div>
-      <h1>Hello {name}!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <>
+      <div>Counter: {count}</div>
+      <button onClick={() => setCount((c) => c + 1)}>Increase</button>
+      <button onClick={() => setCount((c) => c - 1)}>Decrease</button>
+    </>
   );
 };
