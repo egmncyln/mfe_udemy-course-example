@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 // https://webpack.js.org/configuration/
 module.exports = {
@@ -34,10 +35,10 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: {
-                // https://webpack.js.org/loaders/css-loader/#modules
-                localIdentName: "[path][name]__[local]--[hash:base64:5]", // https://webpack.js.org/loaders/css-loader/#localidentname
-              },
+              // modules: {
+              //   // https://webpack.js.org/loaders/css-loader/#modules
+              //   localIdentName: "[path][name]__[local]--[hash:base64:5]", // https://webpack.js.org/loaders/css-loader/#localidentname
+              // },
               importLoaders: 1, // https://webpack.js.org/loaders/css-loader/#importloaders
               sourceMap: true,
             },
