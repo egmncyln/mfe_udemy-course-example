@@ -52,6 +52,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, "public"),
+          to: path.join(__dirname, "dist"),
+          globOptions: {
+            ignore: ["**/index.html"], // Exclude index.html as it's already handled by HtmlWebpackPlugin
+          },
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
   ],
   devServer: {
     port: 3000,
